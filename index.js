@@ -1,11 +1,4 @@
 const request = require("request");
+const fs = require("fs");
 
-request("https://www.campus.academy/", (err, res, body) => {
-  if (err) {
-    console.error(err);
-  } else {
-    const statusCode = res.statusCode;
-    console.log("statusCode", statusCode);
-    console.log("body", body);
-  }
-});
+request("https://www.campus.academy/").pipe(fs.createWriteStream("codac.html"));
