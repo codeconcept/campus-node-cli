@@ -1,0 +1,12 @@
+MERN
+    Mongo
+    Express
+    React
+    Node
+
+MEAN
+    Mongo
+    Express
+    Angular
+    Node
+
