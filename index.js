@@ -1,9 +1,11 @@
-const fs = require("fs");
-const readStream = fs.createReadStream("./technos.txt");
+const request = require("request");
 
-readStream.on("data", chunk => {
-  console.log(chunk.toString("utf8"));
-});
-readStream.on("end", () => {
-  console.log("End of file");
+request("https://www.campus.academy/", (err, res, body) => {
+  if (err) {
+    console.error(err);
+  } else {
+    const statusCode = res.statusCode;
+    console.log("statusCode", statusCode);
+    console.log("body", body);
+  }
 });
